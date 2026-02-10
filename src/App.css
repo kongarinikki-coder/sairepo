@@ -1,0 +1,29 @@
+/* ===================================
+   MAIN APP CSS - Modular stylesheet imports
+   ===================================
+   
+   This file organizes CSS into logical modules
+   for better maintainability and clarity.
+   Each CSS file is organized by page/component.
+   =================================== */
+
+/* Global styles and utilities */
+@import "./styles/Global.css";
+
+/* Layout styles - Sidebar, Navigation, Main layout */
+@import "./styles/Layout.css";
+
+/* Card components - Card containers, avatars, badges */
+@import "./styles/Card.css";
+
+/* Toast notifications */
+@import "./styles/Toast.css";
+
+/* Modal windows and dialogs */
+@import "./styles/Modal.css";
+
+/* Timeline display */
+@import "./styles/Timeline.css";
+
+/* Records page specific styles */
+@import "./styles/Records.css";
