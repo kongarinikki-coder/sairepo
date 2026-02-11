@@ -9,11 +9,17 @@ import {
 const AppointmentsContext = createContext(null);
 
 export const AppointmentsProvider = ({ children }) => {
-  const [appointments, setAppointments] = useState(() => loadAppointments());
+  const [appointments, setAppointments] = useState(() => {
+    const data = loadAppointments();
+    return Array.isArray(data) ? data.filter(Boolean) : [];
+  });
 
   useEffect(() => {
     const onStorage = (e) => {
-      if (e.key === "appointments") setAppointments(loadAppointments());
+      if (e.key === "appointments") {
+        const data = loadAppointments();
+        setAppointments(Array.isArray(data) ? data.filter(Boolean) : []);
+      }
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
@@ -21,15 +27,18 @@ export const AppointmentsProvider = ({ children }) => {
 
   const addAppointment = (appt) => {
     const saved = persistAppointment(appt);
-    setAppointments((s) => [...s, saved]);
+    setAppointments((s = []) => [...s, saved]);
     return saved;
   };
 
   const update = (id, patch) => {
     const updated = persistUpdate(id, patch);
-    setAppointments((s) =>
-      s.map((a) => (a.id === id ? { ...a, ...patch } : a)),
-    );
+    const replaceAll = (list) => {
+      const safe = Array.isArray(list) ? list.filter(Boolean) : [];
+      persistReplace(safe);
+      setAppointments(safe);
+    };
+
     return updated;
   };
 

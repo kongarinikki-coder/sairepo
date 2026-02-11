@@ -36,8 +36,10 @@ import AdminDashboard from "./pages/Admin/Dashboard";
 import UserManagement from "./pages/Admin/UserManagement";
 
 // Misc
-import EmergencyDemo from "./pages/EmergencyDemo";
+
 import NotFound from "./pages/NotFound";
+import OrganDonation from "./pages/Patient/OrganDonation";
+import Emergency from "./pages/Emergency";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -84,6 +86,15 @@ function App() {
               }
             />
 
+            <Route
+              path="/patient/organ-donation"
+              element={
+                <ProtectedRoute>
+                  <OrganDonation />
+                </ProtectedRoute>
+              }
+            />
+
             {/* ✅ PUBLIC: Show booking form, auth check happens on submit */}
             <Route
               path="/patient/book-appointment/:doctorId"
@@ -99,6 +110,9 @@ function App() {
             />
             {/* ✅ PUBLIC: Users can see blood info, login required for donation */}
             <Route path="/patient/blood-donation" element={<BloodDonation />} />
+
+            <Route path="/organ-donation" element={<OrganDonation />} />
+            <Route path="/emergency" element={<Emergency />} />
 
             {/* Doctor */}
             <Route
@@ -179,7 +193,7 @@ function App() {
             />
 
             {/* Other */}
-            <Route path="/emergency" element={<EmergencyDemo />} />
+            <Route path="/emergency" element={<Emergency />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
