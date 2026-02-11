@@ -7,10 +7,12 @@ const PatientAppointments = () => {
   const navigate = useNavigate();
   const { appointments: ctxAppointments } = useAppointments();
 
-  const appointments = ctxAppointments.map((apt) => {
-    const doctor = MOCK_DOCTORS.find((d) => d.id === apt.doctorId);
-    return { ...apt, doctor };
-  });
+  const appointments = (ctxAppointments || [])
+    .filter((apt) => apt && apt.doctorId)
+    .map((apt) => {
+      const doctor = MOCK_DOCTORS.find((d) => d.id === apt.doctorId);
+      return { ...apt, doctor };
+    });
 
   const badgeClass = (status) => {
     if (status === "confirmed") return "badge-confirmed";

@@ -1,0 +1,319 @@
+/* ===============================
+   HERO SECTION (RED BACKGROUND)
+================================ */
+
+.emergency-hero {
+  background: #dc2626;
+  color: #ffffff;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.emergency-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.emergency-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.emergency-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.emergency-text {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-bottom: 26px;
+}
+
+.emergency-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.emergency-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emergency-btn.primary {
+  background: #ffffff;
+  color: #dc2626;
+}
+
+.emergency-btn.secondary {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+/* ===============================
+   INFO CARDS (911 / BLOOD / AMBULANCE)
+================================ */
+
+.emergency-cards {
+  background: #f8fafc;
+  margin-top: -60px;
+  padding: 0 20px 70px;
+}
+
+.emergency-cards > div {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.emergency-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.07);
+}
+
+.emergency-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.emergency-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.emergency-card .number {
+  font-size: 22px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.emergency-card span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===============================
+   EMERGENCY BLOOD REQUEST FORM
+================================ */
+
+.emergency-form-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.emergency-form-card {
+  max-width: 900px;
+  margin: auto;
+  background: #fef2f2;
+  border-radius: 22px;
+  padding: 40px 50px;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.form-icon {
+  font-size: 32px;
+  color: #dc2626;
+}
+
+.form-header h2 {
+  font-size: 24px;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.emergency-form label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.emergency-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #dc2626;
+  color: #ffffff;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* ===============================
+   NEARBY HOSPITALS
+================================ */
+
+.nearby-hospitals {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.nearby-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.location-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hospital-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hospital-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hospital-left {
+  display: flex;
+  gap: 16px;
+}
+
+.hospital-icon {
+  font-size: 34px;
+}
+
+.hospital-meta {
+  display: flex;
+  gap: 14px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.hospital-right {
+  text-align: right;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.tag.red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.tag.red-light {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.direction-btn {
+  background: #22c55e;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+  .emergency-cards > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hospital-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hospital-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .emergency-title {
+    font-size: 36px;
+  }
+
+  .emergency-cards > div {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-form-card {
+    padding: 30px 24px;
+  }
+}

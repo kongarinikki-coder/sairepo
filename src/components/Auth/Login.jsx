@@ -23,9 +23,15 @@ const Login = () => {
     try {
       const user = await login(email, password);
 
-      // Redirect to intended page or role-based dashboard
-      const dest = location.state?.from || `/${user.role}/dashboard`;
-      navigate(dest);
+      /**
+       * ✅ Redirect logic (UPDATED)
+       * 1. If user came from organ donation → go back there
+       * 2. Else → go to role-based dashboard
+       */
+      const redirectPath =
+        location.state?.from || `/${user.role}/dashboard`;
+
+      navigate(redirectPath, { replace: true });
     } catch (err) {
       setError("Invalid email or password.");
     } finally {
